@@ -1,24 +1,18 @@
-import { Button, CssBaseline, Switch, ThemeProvider } from "@mui/material";
 import { useState } from "react";
 import "./App.css";
 import { darkTheme } from "./styles/darkTheme";
 import { lightTheme } from "./styles/lightTheme";
+import {  Button, ConfigProvider } from 'antd';
+import CustomTable from "./components/CustomTable";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   return (
-    <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-      <CssBaseline />
-      <Button onClick={() => setDarkMode(!darkMode)}>switchMode</Button>
-      <Button color="secondary">Secondary</Button>
-      <Button variant="contained" color="primary">
-        Success
-      </Button>
-      <Button variant="outlined" color="error">
-        Error
-      </Button>
-    </ThemeProvider>
+    <ConfigProvider theme={darkMode ? lightTheme : darkTheme}>
+      {/* <Button color="primary" onClick={() => setDarkMode(!darkMode)}>Select me</Button> */}
+      <CustomTable/>
+    </ConfigProvider>
   );
 }
 
