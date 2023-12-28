@@ -1,8 +1,12 @@
-import React from 'react'
+import { DeleteFilled } from '@ant-design/icons';
+import React from 'react';
 
-function Actions() {
+function Actions(props) {
+  console.log({props});
   return (
-    <div>Actions</div>
+    <div>
+      <DeleteFilled onClick={() => {console.log('click', props)}} />
+    </div>
   )
 }
 
