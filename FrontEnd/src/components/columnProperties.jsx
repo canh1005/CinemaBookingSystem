@@ -1,4 +1,5 @@
 export const columnProperties = (action = {}, defaultSettings) => {
+  console.log(defaultSettings);
   return [
     {
       title: 'Name',
@@ -10,7 +11,6 @@ export const columnProperties = (action = {}, defaultSettings) => {
       title: 'Age',
       dataIndex: 'age',
       key: 'age',
-      ...defaultSettings
     },
     {
       title: 'Address',
